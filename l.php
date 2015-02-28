@@ -17,5 +17,5 @@ $subject = "Dhuratat";
 $headers = "From: UrimeVitiRi<muham3dd@gmail.com>";
 $headers .= $_POST['eMailAdd']."\n";
 $headers .= "MIME-Version: 1.0\n";
-header("Location: bussines.htm");
+header("Location: bussines.php");
 ?>
